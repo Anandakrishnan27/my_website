@@ -770,7 +770,7 @@ section {
   }
 
   .header-content {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: repeat(1, 1fr;
     padding-bottom: 6rem;
   }
 
@@ -964,7 +964,7 @@ section {
     font-size: 4.5rem;
   }
 }
-@media screen and (max-width: 970px) {
+@media screen and (max-width: 600px) {
   .container {
     padding: 7rem 6rem;
   }
@@ -974,7 +974,7 @@ section {
   }
 
   .header-content {
-    grid-template-columns: repeat(1, 1fr);
+    grid-template-columns: 1fr;
     padding-bottom: 6rem;
   }
 
@@ -982,7 +982,7 @@ section {
     display: none;
   }
   .left-header .image {
-    width: 90% !important;
+    width: 70% !important;
     margin: 0 auto !important;
   }
 
@@ -993,7 +993,7 @@ section {
     margin: 0 auto;
   }
   .right-header .name {
-    font-size: 2.5rem !important;
+    font-size: 2rem !important;
     text-align: center;
     padding-top: 3rem;
   }
