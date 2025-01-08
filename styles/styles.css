@@ -7,7 +7,7 @@
 
 :root {
   --color-primary: #191d2b;
-  --color-secondary: #27AE60;
+  --color-secondary: #3bd427;
   --color-white: #FFFFFF;
   --color-black: #000;
   --color-grey0: #f8f8f8;
@@ -23,7 +23,7 @@
 
 .light-mode {
   --color-primary: #FFFFFF;
-  --color-secondary: #F56692;
+  --color-secondary: #c84f2d;
   --color-white: #454e56;
   --color-black: #000;
   --color-grey0: #f8f8f8;
@@ -351,19 +351,22 @@ section {
 }
 .skills-container {
   display: flex;
-  justify-content: space-between;
-  gap: 20px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
   margin-top: 20px;
 }
 
 .skills-box {
   border: 2px solid #ddd;
   border-radius: 10px;
-  padding: 20px;
+  margin-bottom: 15px;
+  padding: 10px;
+  font-size: 0.9rem;
   background-color: #333; /* Dark background */
   color: #fff;  /* White text */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1), 0 0 15px #00f1ff; /* Glowing blue effect */
-  width: 48%;  /* Ensures the boxes are evenly sized */
+  width: 45%;  /* Ensures the boxes are evenly sized */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -380,6 +383,19 @@ section {
   text-transform: uppercase;
   font-weight: bold;
   text-shadow: 0 0 8px #00ffa6, 0 0 12px #00ff6a; /* Glowing text effect */
+}
+@media screen and (max-width: 768px) {
+  .skills-box {
+      width: 100%; /* Take full width on small screens */
+  }
+
+  .box-title {
+      font-size: 1.2rem; /* Adjust title font size */
+  }
+
+  .skills-list .courses {
+      font-size: 0.9rem; /* Adjust skill text size */
+  }
 }
 
 .skills-list {
@@ -414,7 +430,7 @@ section {
 .educationdetails {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 2rem;
+  grid-gap: 1rem;
   padding-bottom: 3rem;
 }
 .educationdetails .educationdetails-item {
@@ -459,6 +475,20 @@ section {
 }
 .educationdetails .educationdetails-item p {
   color: var(--color-grey-2);
+}
+@media screen and (max-width: 768px) {
+  .educationdetails {
+      grid-template-columns: 1fr; /* Switch to single column on smaller screens */
+  }
+  .educationdetails .educationdetails-item {
+      padding-left: 1rem; /* Reduce left padding */
+  }
+  .educationdetails .educationdetails-item h5 {
+      font-size: 1.1rem; /* Adjust heading font size */
+  }
+  .educationdetails .educationdetails-item p {
+      font-size: 0.9rem; /* Adjust text font size */
+  }
 }
 
 .port-text {
@@ -848,8 +878,14 @@ section {
   }
 
   .contact-content-con {
-    flex-direction: column;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px; /* Adds spacing between left and right sections */
   }
+  .left-contact {
+    flex: 2; /* Ensure space is allocated for the contact section */
+}
   .contact-content-con .right-contact {
     margin-left: 0;
     margin-top: 2.5rem;
@@ -868,21 +904,53 @@ section {
     margin-bottom: 6rem;
   }
 
-  .contact-item {
-    flex-direction: column;
-    margin: 1rem 0;
-  }
-  .contact-item p {
-    font-size: 15px;
-    color: var(--color-grey-2);
-  }
   .contact-item span {
     font-size: 15px;
   }
-  .contact-item .icon {
-    grid-template-columns: 25px 1fr;
+  .contact-item {
+    display: flex;
+    align-items: center; /* Align icons and text vertically */
+    gap: 15px; /* Space between icon and text */
+    margin-bottom: 10px; /* Space between each contact item */
+}
+
+.contact-item .icon {
+    display: flex;
+    align-items: center; /* Center-align the icon */
+    justify-content: center;
+    min-width: 40px; /* Fixed size for consistent alignment */
+    height: 40px;
+    background-color: var(--color-secondary); /* Icon background color */
+    border-radius: 50%; /* Circular icons */
+}
+
+.contact-item .icon i {
+    font-size: 1.2rem;
+    color: var(--color-white); /* Icon color */
+}
+
+.contact-item p {
+    margin: 0;
+    font-size: 1rem;
+    color: var(--color-grey-1);
+}
+
+
+@media screen and (max-width: 768px) {
+  .contact-item {
+      flex-direction: row; /* Ensure icons and text stay in line */
+      align-items: flex-start;
+      gap: 10px;
   }
 
+  .contact-item .icon {
+      margin-bottom: 0; /* Avoid extra gaps for icons */
+  }
+
+  .contact-item p {
+      font-size: 0.9rem; /* Slightly smaller text for narrow screens */
+  }
+}
   .main-title h2 {
     font-size: 2rem;
   }
